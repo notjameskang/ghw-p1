@@ -1,0 +1,16 @@
+from pieces_copilot_sdk import PiecesClient
+
+config = {'baseUrl' : 'http://localhost:1000'}
+
+pieces_client = PiecesClient(config)
+
+while True:
+
+    question = input("Ask a question (or type 'stop' to quit): ")
+   
+    if question.lower() == 'stop':
+
+        break
+    response = pieces_client.ask_question(question)
+    print(response)
+
